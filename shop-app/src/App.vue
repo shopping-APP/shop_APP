@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="list-tabber">
+      
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Index from '@/pages/index/index'
+import FreeShipping from '@/pages/freeShipping/freeShipping'
+import Collection from '@/pages/collection/collection'
+import Main from '@/pages/main/main'
+import Sort from '@/pages/sort/sort'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Index,
+    FreeShipping,
+    Collection,
+    Main,
+    Sort
   }
 }
 </script>
@@ -23,6 +34,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
+}
+html,body{
+  margin:0;
+  padding: 0;
 }
 </style>
