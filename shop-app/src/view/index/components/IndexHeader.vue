@@ -1,29 +1,29 @@
 <template>
     <div class='IndexHeader'>
+        <!-- 头部表单 -->
         <div class="HeaderSearch">
-            <i class="iconfont icon-sousuo"></i>
+            <i class="iconfont icon-suosou"></i>
             输入商品名或粘贴宝贝标题搜索
         </div>
+
+        <!-- 头部列表 -->
         <div class="HeaderList">
-            <span>精选</span>
-            <!-- <div class="listbox">
+            <p><span>精选</span></p>
+            <div class="listbox">
                 <ul class="list">
                     <li v-for="(l,i) in HeaderList" :key="i">{{l}}</li>
                 </ul>
-            </div> -->
-            <!-- <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="(l,i) in HeaderList" :key='i'>{{l}}}</div>
-                </div>
-                <div class="swiper-pagination"></div>
             </div>
-            <span class='iconfont icon-xianshi'></span> -->
+            <p class="iconfont icon-san"></p>
+        </div>
+        <!-- 头部列表显示框 -->
+        <div class="HeaderSort">
+
         </div>
     </div>
 </template>
 
 <script>
-// import Swiper from 'vue-awesome-swiper'
 export default {
     data(){
         return {
@@ -33,19 +33,14 @@ export default {
         }
     }
 }
-// var swiper = new Swiper('.swiper-container', {
-//     slidesPerView: 3,
-//     spaceBetween: 30,
-//     pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//     },
-// });
+
 </script>
 
 <style scoped>
 .IndexHeader{
     height:85px;
+    overflow: hidden;
+    background: #bb5c3e;
 }
 ul,li{
     margin: 0;
@@ -60,10 +55,15 @@ ul,li{
     color:#999;
     display: flex;
     align-items: center;
-    background:pink;
+    background:#fff;
     border-radius: 20px;
 }
+.HeaderSearch>i{
+    font-size: 18px;
+    margin-right: 8px;
+}
 .HeaderList{
+    border-bottom: 0.1px solid #eee;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,60 +71,41 @@ ul,li{
     overflow:hidden;
     position: relative;
 }
-.HeaderList>span{
+.HeaderList>p:nth-of-type(1)>span{
+    border-bottom:1px solid #fff;
+    padding-bottom: 10px;
+}
+.HeaderList>p{
+    color:#fff;
+    font-size: 13px;
     line-height:40px;
     display: inline-block;
     position:absolute;
 }
-.HeaderList>span:nth-of-type(1){
+.HeaderList>p:nth-of-type(1){
     width:50px;
     left:0;
 }
-.HeaderList>span:nth-of-type(2){
+.HeaderList>p:nth-of-type(2){
     width:40px;
     right:0;
 }
 .listbox{
+    overflow-x: auto;
     height:40px;
     display: flex;
     margin:0 40px 0 50px;
 }
+.list{
+    width:auto;
+    white-space: nowrap;
+    overflow-x:auto;
+}
 .list>li{
-    float: left;
-}
-html, body {
-position: relative;
-height: 100%;
-}
-body {
-background: #eee;
-font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-font-size: 14px;
-color:#000;
-margin: 0;
-padding: 0;
-}
-.swiper-container {
-width: 100%;
-height: 100%;
-}
-.swiper-slide {
-text-align: center;
-font-size: 18px;
-background: #fff;
-
-/* Center slide text vertically */
-display: -webkit-box;
-display: -ms-flexbox;
-display: -webkit-flex;
-display: flex;
--webkit-box-pack: center;
--ms-flex-pack: center;
--webkit-justify-content: center;
-justify-content: center;
--webkit-box-align: center;
--ms-flex-align: center;
--webkit-align-items: center;
-align-items: center;
+    color:rgba(255,255,255,.65);
+    display:inline-block;
+    line-height:40px;
+    font-size: 13px;
+    margin:0 10px;
 }
 </style>

@@ -41,6 +41,7 @@ export default {
 
 <style>
 @import url('http://at.alicdn.com/t/font_1395397_2dz70mxs4x9.css'); 
+@import url('http://at.alicdn.com/t/font_1401731_4iioea9t953.css');
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -55,6 +56,7 @@ html,body{
   height:100%;
   margin:0;
   padding: 0;
+  background: #f5f5f5;
 }
 p{
   margin: 0;
@@ -63,6 +65,8 @@ p{
   font-size:24px;
 }
 .list-tabber{
+  z-index: 99;
+  background: #fff;
   font-size: 12px;
   width:100%;
   position:fixed;
