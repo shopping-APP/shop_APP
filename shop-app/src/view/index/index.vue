@@ -15,7 +15,7 @@
                 <!-- 优惠头条 -->
                 <IndexHeadlines-demo></IndexHeadlines-demo>
                 <!-- 栏目橱窗 -->
-
+                <IndexColumn-demo></IndexColumn-demo>
                 <!-- 品牌特卖 -->
 
                 <!-- 大家都在领 -->
@@ -34,6 +34,7 @@ import IndexSwiper from './components/IndexSwiper';
 import IndexNav from './components/IndexNav';
 import IndexHeadlines from './components/IndexHeadlines';
 import IndexActivity from './components/IndexActivity'
+import IndexColumn from './components/IndexColumn';
 
 export default {
     data(){
@@ -46,7 +47,8 @@ export default {
         "IndexSwiper-demo":IndexSwiper,
         "IndexNav-demo":IndexNav,
         "IndexHeadlines-demo":IndexHeadlines,
-        "IndexActivity-demo":IndexActivity
+        "IndexActivity-demo":IndexActivity,
+        "IndexColumn-demo":IndexColumn
     },
     mounted(){
         var url = 'http://cmsjapi.dataoke.com/api/category/product/model-detail-by-model-id-new?entityId=3&modelId=-1&proModelId=1&source=3&userId=567003&tuserId=567003';
@@ -61,7 +63,7 @@ export default {
 <style scoped>
 .HeaderBg{
     height:137px;
-    background:#bb5c3e;
+    background:#3e3a3a;
 }
 .HeaderContext{
     position: relative;

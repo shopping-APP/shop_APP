@@ -2,54 +2,48 @@
     <div id="swiperapp">
         <!-- Swiper -->
         <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"
+           <!-- swiper -->
+            <swiper :options="swiperOption" v-if="swiperImg.length>1">
+                <swiper-slide  
                     v-for="(s,i) in swiperImg"
-                    :key="i"
-                >
-                <img class="swiperimg" :src="s.pic">
-                </div>
-            </div>
-
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
+                    :key="i">
+                     <img class="swiperimg" :src="s.pic">
+                </swiper-slide>
+                <div class="swiper-pagination" slot="pagination"></div>
+            </swiper>
         </div>
 
     </div>
 </template>
-
 <script>
 // import Vue from 'vue';
 import axios from 'axios';
 import Swiper from 'swiper';
 // import { swiper, swiperSlide } from 'vue-awesome-swiper'
-var swiper = new Swiper('.swiper-container', {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-    },
-    pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    },
-    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    },
-});
 export default {
     data(){
         return {
-            swiperImg:[]
+            swiperImg:[],
+            swiperOption: {
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false
+                },
+                loop:true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            }
         }
     },
     mounted(){
         var url = 'http://cmsjapi.dataoke.com/api/category/product/model-detail-by-model-id-new?entityId=3&modelId=-1&proModelId=1&source=3&userId=567003&tuserId=567003';
         axios.get(url)
         .then(res => {
-            console.log('首页轮播',res.data.data.config);
+            // console.log('首页轮播',res.data.data.config);
             this.swiperImg = res.data.data.config
         })
     }

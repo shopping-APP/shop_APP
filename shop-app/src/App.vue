@@ -52,6 +52,7 @@ export default {
   /* margin-top: 60px; */
 }
 html,body{
+  overflow-x: hidden;
   width: 100%;
   height:100%;
   margin:0;

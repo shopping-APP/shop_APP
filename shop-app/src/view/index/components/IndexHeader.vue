@@ -40,7 +40,7 @@ export default {
 .IndexHeader{
     height:85px;
     overflow: hidden;
-    background: #bb5c3e;
+    background: #3e3a3a;
 }
 ul,li{
     margin: 0;
