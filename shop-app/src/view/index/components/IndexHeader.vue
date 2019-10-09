@@ -1,11 +1,17 @@
 <template>
     <div class='IndexHeader'>
         <!-- 头部表单 -->
-        <div class="HeaderSearch">
-            <i class="iconfont icon-suosou"></i>
-            输入商品名或粘贴宝贝标题搜索
+        <div class="IndexHeaderBox">
+            <div class="HeaderSearch">
+                <i class="iconfont icon-suosou"></i>
+                输入商品名或粘贴宝贝标题搜索
+            </div>
+            <p class="HeaderInfo">
+                <span class="iconfont"></span>
+                <span class="HeaderInfoTitle">{{info}}</span>
+            </p>
         </div>
-
+        
         <!-- 头部列表 -->
         <div class="HeaderList">
             <p><span>精选</span></p>
@@ -29,7 +35,8 @@ export default {
         return {
             HeaderList:[
                 "美食","居家日用","女装","美妆","男装","数码家电","鞋品","文娱车品","家装家纺","配饰","箱包","母婴","内衣","户外运动"
-            ]
+            ],
+            info:'信息'
         }
     }
 }
@@ -42,12 +49,20 @@ export default {
     overflow: hidden;
     background: #3e3a3a;
 }
+::-webkit-scrollbar{display:none}
 ul,li{
     margin: 0;
     padding:0;
     list-style:none;
 }
+.IndexHeaderBox{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
 .HeaderSearch{
+    width: 80%;
+    float: left;
     margin:8px 10px 4px;
     height: 32px;
     padding-left:12px;
@@ -61,6 +76,15 @@ ul,li{
 .HeaderSearch>i{
     font-size: 18px;
     margin-right: 8px;
+}
+.HeaderInfo{
+    width: 10%;
+    height: 100%;
+    float: left;
+    color:#fff;
+}
+.HeaderInfo>span:nth-last-child(1){
+
 }
 .HeaderList{
     border-bottom: 0.1px solid #eee;

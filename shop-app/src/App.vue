@@ -79,7 +79,7 @@ p{
   align-items: center;
   border-top:1px solid #cccccc;
 }
-.router-link-exact-active,.router-link-active{
+.router-link-exact-active{
   color:#fd575c;
 }
 a{

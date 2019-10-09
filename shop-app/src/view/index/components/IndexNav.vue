@@ -17,7 +17,7 @@ export default {
         }
     },
     mounted(){
-        var url = 'http://cmsjapi.dataoke.com/api/category/product/model-detail-by-model-id-new?entityId=3&modelId=10406&proModelId=2&source=3';
+        var url = 'http://cmsjapi.dataoke.com/api/category/product/model-detail-by-model-id-new?entityId=3&modelId=11418&proModelId=2&source=3&version=v1';
         axios.get(url)
         .then( res => {
             // console.log('图标导航列表',res.data.data.config.data);

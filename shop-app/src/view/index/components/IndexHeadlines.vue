@@ -41,7 +41,7 @@ export default {
         }
     },
     mounted(){
-        var url = 'http://cmsjapi.dataoke.com/api/category/product/model-detail-by-model-id-new?entityId=3&modelId=10514&proModelId=13&source=3';
+        var url = 'http://cmsjapi.dataoke.com/api/category/product/model-detail-by-model-id-new?entityId=3&modelId=11419&proModelId=13&source=3&version=v1';
         axios.get(url)
         .then(( res ) => {
             // console.log('优惠头条',res.data.data.config);
@@ -113,6 +113,8 @@ export default {
 }
 .HeadlinesListName{
     height: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     overflow: hidden;
     line-height: 14px;
     font-size: 12px;
