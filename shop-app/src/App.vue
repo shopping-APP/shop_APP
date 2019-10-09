@@ -33,7 +33,9 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   name: 'app',
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     swiper,
+    // eslint-disable-next-line vue/no-unused-components
     swiperSlide
   }
 }
