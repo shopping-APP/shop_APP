@@ -10,11 +10,17 @@
                 <i class="iconfont icon-zuoyoujiantou-copy"></i>
             </p> -->
              <!-- swiper -->
-            <swiper class="HeadlinesListBox" :options="swiperOption"  v-if="IndexHeadlines.length>0">
+            <swiper class="HeadlinesListBox swiper-no-swiping" :options="swiperOption"  v-if="IndexHeadlines.length>0">
                 <swiper-slide class="swiper-slide" v-for="(s,i) in IndexHeadlines" :key="i">
-                    <span class="HeadlinesListTag">{{s.tag}}</span>
-                    <span class="HeadlinesListName">{{s.name}}</span>
-                    <i class="HeadlinesListIcon iconfont icon-zuoyoujiantou-copy"></i>
+                    <!-- <span class="HeadlinesListTag">{{s.tag}}</span>
+                    <span></span> -->
+                    <a class="HeadlinesListTF">
+                        <span class="HeadlinesListName">
+                            <span class="HeadlinesListTag">{{s.tag}}</span>
+                            {{s.name}}
+                        </span>
+                        <i class="HeadlinesListIcon iconfont icon-zuoyoujiantou-copy"></i>
+                    </a>
                 </swiper-slide>
             </swiper>
         </div>
@@ -93,6 +99,13 @@ export default {
     font-size: 12px;
     justify-content:space-between;
 }
+.HeadlinesListTF{
+    display: block;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+}
 .HeadlinesListIcon{
     font-size: 13px;
     margin-top:3px;
@@ -112,10 +125,13 @@ export default {
     margin-right: 5px;
 }
 .HeadlinesListName{
+    display:inline-block;
+    text-align: left;
     height: 14px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width:231px;
     line-height: 14px;
     font-size: 12px;
 }

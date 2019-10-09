@@ -28,6 +28,7 @@
                             <span class="ddqorginPrice">{{m.orginPrice}}</span>
                         </p>
                     </swiper-slide>
+                    <!-- <div class="swiper-pagination" slot="pagination"></div> -->
                 </swiper>
             </div>
             
@@ -48,10 +49,19 @@ export default {
             columnleft:[],
             columnright:[],
             countdowntime:'',
+            // swiperOption: {
+            //     slidesPerView: 3,
+            //     slidesPerColumn: 2,
+            //     spaceBetween: 30,
+            // }
             swiperOption: {
                 slidesPerView: 3,
                 slidesPerColumn: 2,
                 spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
             }
         }
     },
@@ -71,7 +81,7 @@ export default {
     methods:{
         countdown () {
             // 目标日期时间戳
-            const end = Date.parse(new Date('2019-9-20'))
+            const end = Date.parse(new Date('2019-10-10 00:00:00'))
             // 当前时间戳
             const now = Date.parse(new Date())
             // 相差的毫秒数
@@ -96,6 +106,19 @@ export default {
 }
 </script>
 <style scoped>
+.swiper-wrapper{
+    width:800px!important;
+}
+.swiper-container {
+    height: auto!important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .swiper-slide {
+    width: 60px !important;
+    margin:0 9px 12px 0 !important;
+    height: 97px;
+  }
 #columnapp{
     height: 265px;
     margin-top: 10px;
@@ -159,13 +182,12 @@ export default {
 .ddqswiperBox{
     height: 85%;
 }
-.ddqlist{
+/* .ddqlist{
     margin-right: 9px;
     margin-bottom: 12px;
     width: 72px !important;
-    /* float: left; */
     height: 97px;
-}
+} */
 .ddqlist>img{
     width: 100%;
 }
