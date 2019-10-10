@@ -27,6 +27,6 @@ Vue.use(NavBar).use(Grid).use(GridItem).use(Tab).use(Tabs);
 import './assets/css/public.css'
 
 new Vue({
-  router:router,
+  router,
   render: h => h(App),
 }).$mount('#app')

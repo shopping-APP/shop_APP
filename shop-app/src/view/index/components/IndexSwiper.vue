@@ -77,6 +77,7 @@ export default {
 
     }
     .swiper-slide {
+        /* margin-left: 15px!important; */
       text-align: center;
       font-size: 18px;
       background: #fff;
