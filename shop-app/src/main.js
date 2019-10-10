@@ -18,9 +18,9 @@ Vue.use(VueRouter)
 Vue.config.productionTip = false
 
 //按需引入vant组件
-import {NavBar,Grid, GridItem,Tab, Tabs } from 'vant';
+import {NavBar,Grid, GridItem,Tab, Tabs,Divider,Swipe, SwipeItem,Icon,Image,Lazyload  } from 'vant';
 import 'vant/lib/index.css'
-Vue.use(NavBar).use(Grid).use(GridItem).use(Tab).use(Tabs);
+Vue.use(NavBar).use(Grid).use(GridItem).use(Tab).use(Tabs).use(Divider).use(Swipe).use(SwipeItem).use(Icon).use(Image).use(Lazyload);
 // import 'vant/lib/icon/local.css';
 
 //引入公用样式

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="free">
     <NavBar>
       <img
         slot="title"
@@ -23,6 +23,13 @@
         <van-tab title="数码配件"></van-tab>
         <van-tab title="文娱车品"></van-tab>
     </van-tabs>
+    <Item :beauty='beauty' title='补水面膜'></Item>
+    <Item :beauty='headest' title='潮牌耳机'></Item>
+    <Item :beauty='bed' title='床上用品'></Item>
+    <div style="height:5px"></div>
+
+    <!-- 精选推荐 -->
+    <Recommend :recommend='recommend'></Recommend>
   </div>
 
   
@@ -32,26 +39,46 @@
 import NavBar from "../index/components/NavBar";
 import title from "@/assets/js/title.js";
 import UpperPart from '../index/components/UpperPart'
+import Item from './components/Item'
+import Recommend from './components/Recommend'
+import beautys from '@/assets/js/beauty.js'
+import headest from '@/assets/js/headset.js'
+import bed from '@/assets/js/bed.js'
+import recommend from '@/assets/js/recommend.js'
 export default {
   data() {
     return {
       gettitle: {},
-      active: 0
+      active: 0,
+      beauty:[], //补水面膜数据
+      headest:[],  //潮牌耳机数据
+      bed:[],  //床上用品数据
+      recommend:[]  //精选推荐
     };
   },
   created() {
     this.gettitle = title;
-    console.log(this.gettitle);
+
+    this.beauty=beautys.data.data.slice(0, 10)
+    this.headest=headest.data.data.slice(0, 10)
+    this.bed=bed.data.data.slice(0, 10)
+    this.recommend=recommend.data.data
+    console.log(this.recommend)
   },
   methods: {},
   components: {
     NavBar,
-    UpperPart
+    UpperPart,
+    Item,
+    Recommend
   }
 };
 </script>
 
 <style scoped>
+.free{
+  background: #f5f5f5;
+}
 .van-nav-bar {
   background: linear-gradient(to left, #fa4dbe 0, #fbaa58 100%);
 }
@@ -64,8 +91,5 @@ export default {
 }
 
 
-.van-ellipsis{
-    font-weight: 600;
-    font-size: 14px;
-}
+
 </style>
