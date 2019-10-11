@@ -6,6 +6,8 @@ import Sort from './view/sort/sort.vue'
 import Collection from './view/collection/collection.vue'
 import Main from './view/main/main.vue'
 
+import IndexHeaderList from './components/IndexHeaderList.vue'
+
 let routes = [
     {
         path:'/',redirect:"/index/"
@@ -30,6 +32,10 @@ let routes = [
         path:'/main',
         component:Main
     },
+    {
+        path:'/indexheaderlist',
+        component:IndexHeaderList
+    }
 ]
 
 const router = new VueRouter({

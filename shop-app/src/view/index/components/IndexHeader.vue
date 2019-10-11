@@ -17,7 +17,11 @@
             <p><span>精选</span></p>
             <div class="listbox">
                 <ul class="list">
-                    <li v-for="(l,i) in HeaderList" :key="i">{{l.name}}</li>
+                    <li v-for="(l,i) in HeaderList" :key="i">
+                        <router-link to="/indexheaderlist">
+                            {{l.name}}
+                        </router-link>
+                    </li>
                 </ul>
             </div>
             <p class="iconfont icon-san"></p>
@@ -41,7 +45,7 @@ export default {
     mounted() {
         axios.get('http://cmsjapi.dataoke.com/api/category/get-category-list')
         .then(res=>{
-            console.log('头部列表',res.data.data);
+            // console.log('头部列表',res.data.data);
             this.HeaderList = res.data.data;
         })
     },
@@ -51,6 +55,10 @@ export default {
 
 <style scoped>
 .IndexHeader{
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
     height:85px;
     overflow: hidden;
     background: #3e3a3a;
@@ -102,11 +110,11 @@ ul,li{
     font-size:12px;
 }
 .HeaderList{
-    border-bottom: 0.1px solid #eee;
+    /* border-bottom: 0.1px solid #eee; */
     display: flex;
     align-items: center;
     justify-content: center;
-    height:40px;
+    height:41px;
     overflow:hidden;
     position: relative;
 }
@@ -141,10 +149,12 @@ ul,li{
     overflow-x:auto;
 }
 .list>li{
-    color:rgba(255,255,255,.65);
     display:inline-block;
     line-height:40px;
     font-size: 13px;
     margin:0 10px;
+}
+.list>li>a{
+    color:rgba(255,255,255,.65);
 }
 </style>

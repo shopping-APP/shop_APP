@@ -17,8 +17,8 @@ export default {
         var url = 'http://cmsjapi.dataoke.com/api/category/product/model-detail-by-model-id-new?entityId=3&modelId=10512&proModelId=19&source=3';
         axios.get(url)
         .then(( res ) => {
-            console.log("限时活动:",res.data.data);
-            console.log("限时活动:",res.data.data.config);
+            // console.log("限时活动:",res.data.data);
+            // console.log("限时活动:",res.data.data.config);
             this.activity = res.data.data.config;
         })
     }
