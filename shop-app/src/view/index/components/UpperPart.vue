@@ -35,6 +35,7 @@ export default {
 ul {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 ul li {
   width: 50%;
