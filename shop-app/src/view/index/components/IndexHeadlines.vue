@@ -62,6 +62,7 @@ export default {
 </script>
 <style scoped>
 #IndexHeadlines{
+    border-radius: 5px;
     border-top: 2px solid #f5f5f5;
     height: 40px;
     width: 100%;

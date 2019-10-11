@@ -20,12 +20,12 @@
                         </p>
                     </swiper-slide>
                 </swiper> -->
-                <swiper :options="swiperOption">
+                <swiper :options="swiperOption" v-if="columnleft.length>1">
                     <swiper-slide class="ddqlist" v-for="(m,i) in columnleft" :key="i">
                         <img :src="m.pic" />
                         <p>
-                            <span class="ddqprice">{{m.price}}</span>
-                            <span class="ddqorginPrice">{{m.orginPrice}}</span>
+                            <span class="ddqprice">￥{{m.price}}</span>
+                            <span class="ddqorginPrice">￥{{m.orginPrice}}</span>
                         </p>
                     </swiper-slide>
                     <!-- <div class="swiper-pagination" slot="pagination"></div> -->
@@ -35,7 +35,9 @@
         </div>
         <!--咚咚抢右  -->
         <div class="columnimport">
-
+            <div class="columnimportBox" v-for="(s,i) in columnright" :key="i">
+                <img :src="s.address" alt="">
+            </div>
         </div>
     </div>
 </template>
@@ -49,19 +51,15 @@ export default {
             columnleft:[],
             columnright:[],
             countdowntime:'',
-            // swiperOption: {
-            //     slidesPerView: 3,
-            //     slidesPerColumn: 2,
-            //     spaceBetween: 30,
-            // }
             swiperOption: {
                 slidesPerView: 3,
                 slidesPerColumn: 2,
                 spaceBetween: 30,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                }
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false
+                },
+                loop:true
             }
         }
     },
@@ -69,9 +67,9 @@ export default {
         var url = 'http://cmsjapi.dataoke.com/api/category/product/model-detail-by-model-id-new?entityId=3&modelId=10584&proModelId=20&source=3';
         axios.get(url)
         .then( res => {
-            console.log("栏目橱窗时间:",res.data.data.countTime);
-            console.log("栏目橱窗左:",res.data.data.ddqGoodsList);
-            console.log("栏目橱窗右:",res.data.data.config);
+            // console.log("栏目橱窗时间:",res.data.data.countTime);
+            // console.log("栏目橱窗左:",res.data.data.ddqGoodsList);
+            // console.log("栏目橱窗右:",res.data.data.config);
             this.columndata = res.data.data.countTime;
             this.columnleft = res.data.data.ddqGoodsList;
             this.columnright = res.data.data.config;
@@ -81,7 +79,7 @@ export default {
     methods:{
         countdown () {
             // 目标日期时间戳
-            const end = Date.parse(new Date('2019-10-10 00:00:00'))
+            const end = Date.parse(new Date('2019-10-11 00:00:00'))
             // 当前时间戳
             const now = Date.parse(new Date())
             // 相差的毫秒数
@@ -115,11 +113,12 @@ export default {
     margin-right: auto;
   }
   .swiper-slide {
-    width: 60px !important;
+    width: 56px !important;
     margin:0 9px 12px 0 !important;
     height: 97px;
   }
 #columnapp{
+    border-radius: 5px;
     height: 265px;
     margin-top: 10px;
     background: #fff;
@@ -136,6 +135,14 @@ export default {
 .columnimport{
     width: 50%;
     height: 100%;
+}
+.columnimportBox{
+    border-bottom:1px solid #eee; 
+    height: 50%;
+}
+.columnimportBox>img{
+    height: 100%;
+    width: 100%;
 }
 .titleBox{
     margin-bottom:5%;
@@ -190,5 +197,22 @@ export default {
 } */
 .ddqlist>img{
     width: 100%;
+}
+.ddqprice{
+    font-size: 12px;
+    color:#ff3b32;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ddqorginPrice{
+    font-size:12px;
+    text-decoration: line-through;
+    color: #999;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 </style>

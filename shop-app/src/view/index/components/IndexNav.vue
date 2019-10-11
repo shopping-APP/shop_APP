@@ -27,6 +27,9 @@ export default {
 }
 </script>
 <style scoped>
+#navapp{
+    border-radius: 5px;
+}
 ul,li{
     padding: 0;
     margin: 0;

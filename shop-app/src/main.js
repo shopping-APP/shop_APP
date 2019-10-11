@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import store from './store'
+
 //全局引入axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -28,5 +30,6 @@ import './assets/css/public.css'
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')

@@ -101,4 +101,7 @@ export default {
         height: 100%;
         border-radius: 5px;
     }
+    .swiper-pagination>span{
+        width: 8px!important;
+    }
 </style>

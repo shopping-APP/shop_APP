@@ -17,10 +17,11 @@
                 <!-- 栏目橱窗 -->
                 <IndexColumn-demo></IndexColumn-demo>
                 <!-- 品牌特卖 -->
-
+                <IndexSale-demo></IndexSale-demo>
                 <!-- 大家都在领 -->
-
+                <IndexReceive-demo></IndexReceive-demo>
                 <!-- 发现好货 -->
+                <IndexFind-demo></IndexFind-demo>
             </div>
         </div>
     </div>
@@ -35,6 +36,9 @@ import IndexNav from './components/IndexNav';
 import IndexHeadlines from './components/IndexHeadlines';
 // import IndexActivity from './components/IndexActivity'
 import IndexColumn from './components/IndexColumn';
+import IndexSale from './components/IndexSale';
+import IndexReceive from './components/IndexReceive'
+import IndexFind from './components/IndexFind';
 
 export default {
     data(){
@@ -48,7 +52,10 @@ export default {
         "IndexNav-demo":IndexNav,
         "IndexHeadlines-demo":IndexHeadlines,
         // "IndexActivity-demo":IndexActivity,
-        "IndexColumn-demo":IndexColumn
+        "IndexColumn-demo":IndexColumn,
+        'IndexSale-demo':IndexSale,
+        'IndexReceive-demo':IndexReceive,
+        'IndexFind-demo':IndexFind
     },
     mounted(){
         // var url = 'http://cmsjapi.dataoke.com/api/category/product/model-detail-by-model-id-new?entityId=3&modelId=-1&proModelId=1&source=3&userId=567003&tuserId=567003';
@@ -61,13 +68,16 @@ export default {
 </script>
 
 <style scoped>
+.HeaderMain{
+    margin: 85px 0 51px;
+}
 .HeaderBg{
     height:137px;
     background:#3e3a3a;
 }
 .HeaderContext{
     position: relative;
-    top:-125px;
+    top:-135px;
     padding: 0 10px;
 }
 </style>
