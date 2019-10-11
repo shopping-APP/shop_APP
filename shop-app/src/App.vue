@@ -43,7 +43,7 @@ export default {
 
 <style>
 @import url('http://at.alicdn.com/t/font_1395397_2dz70mxs4x9.css'); 
-@import url('http://at.alicdn.com/t/font_1401731_4iioea9t953.css');
+@import url('http://at.alicdn.com/t/font_1401731_fx33qvbb83n.css');
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -81,7 +81,7 @@ p{
   align-items: center;
   border-top:1px solid #cccccc;
 }
-.router-link-exact-active,.router-link-active{
+.router-link-exact-active{
   color:#fd575c;
 }
 a{
