@@ -5,6 +5,7 @@ import FreeShipping from './view/freeShipping/freeShipping.vue'
 import Sort from './view/sort/sort.vue'
 import Collection from './view/collection/collection.vue'
 import Main from './view/main/main.vue'
+import PopularList from './view/PopularList/PopularList.vue'
 
 import IndexHeaderList from './components/IndexHeaderList.vue'
 
@@ -35,6 +36,10 @@ let routes = [
     {
         path:'/indexheaderlist',
         component:IndexHeaderList
+    },
+    {
+        path:'/popularlist',
+        component:PopularList
     }
 ]
 

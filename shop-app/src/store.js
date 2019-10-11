@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        swiperImg:[]
+        swiperImg:[],
+        xb:0
     },
 
     actions: {
@@ -15,6 +16,11 @@ const store = new Vuex.Store({
             .then(res=>{
                 state.swiperImg(res)
             })
+        }
+    },
+    mutations:{
+        changexb(state,index){
+            state.xb=index
         }
     }
 })

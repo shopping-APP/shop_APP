@@ -7,19 +7,12 @@
      </h3>
      <ul>
        <li v-for="(item,index) in recommend" :key="index">
-         <!-- <img :src="item.pic"> -->
-         <!-- <van-image
-            width="100"
-            height="100"
-            lazy-load
-            src="item.pic"
-          /> -->
           <img v-lazy="item.pic" attempt=10>
          <div class="bottom">
            <h3>{{item.d_title}}</h3>
           <div>
             <li>天猫价 ¥{{item.yuanjia}}</li>
-            <li>已售<span>{{item.xiaoliang | simplify}}</span>件</li>
+            <li class="num">已售<span>{{item.xiaoliang | simplify}}</span>件</li>
           </div>
           <div>
             <li>券后价 ¥<span>{{(item.yuanjia-item.quan_jine) | simplify2}}</span></li>
@@ -121,6 +114,9 @@ ul>li>.bottom>div>li{
 }
 ul>li>.bottom>div>li:nth-of-type(2){
   text-align: right;
+}
+ul>li>.bottom>div>li.num{
+  text-align: left;
 }
 ul>li>.bottom>div>li span{
       color: #FF2B22;
