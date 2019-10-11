@@ -70,6 +70,7 @@ export default {
 <style scoped>
 .HeaderMain{
     margin: 85px 0 51px;
+    background: #F6F6F6;
 }
 .HeaderBg{
     height:137px;

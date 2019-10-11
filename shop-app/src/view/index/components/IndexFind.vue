@@ -15,7 +15,7 @@
                     </p>
                     <div class="IndexFindTotal">
                         <span>天猫 ￥{{m.yuanjia}}</span>
-                        <span>已售{{m.xiaoliang}}万</span>
+                        <span>已售{{(m.xiaoliang/10000).toFixed(2)}}万</span>
                     </div> 
                 </a>
             </li>
