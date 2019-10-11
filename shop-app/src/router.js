@@ -10,7 +10,7 @@ import IndexHeaderList from './components/IndexHeaderList.vue'
 
 let routes = [
     {
-        path:'/',redirect:"/index/"
+        path:'/',redirect:"/index"
     },
     {
         path:'/index',

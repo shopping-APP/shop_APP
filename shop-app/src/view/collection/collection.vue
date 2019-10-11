@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="shop">
         <div class="header_pr  header_red">
             <header class="icon_header">
                 <a class="iconfont icon-zuojiantou" ui-back  href="/index.php?r=user/index"></a>

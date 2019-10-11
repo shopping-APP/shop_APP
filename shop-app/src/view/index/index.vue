@@ -1,7 +1,7 @@
 <template>
     <div class="index">
         <IndexHeader-demo></IndexHeader-demo>
-        <div class="HeaderMain">
+        <div class="HeaderMain shop">
             <!-- 首页头部颜色 -->
             <div class="HeaderBg"></div>
             <!-- 首页主体内容 -->
@@ -69,7 +69,8 @@ export default {
 
 <style scoped>
 .HeaderMain{
-    margin: 85px 0 51px;
+    /* margin: 85px 0 51px; */
+    margin-top: 85px;
     background: #F6F6F6;
 }
 .HeaderBg{

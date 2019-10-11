@@ -1,5 +1,5 @@
 <template>
-  <div class="free">
+  <div class="free shop">
     <NavBar>
       <img
         slot="title"

@@ -1,5 +1,5 @@
 <template>
-    <h1>sort</h1>
+    <div class="shop">sort</div>
 </template>
 
 <script>

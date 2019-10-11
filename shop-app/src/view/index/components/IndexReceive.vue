@@ -65,7 +65,7 @@ export default {
     mounted() {
         this.axios.get('http://cmsjapi.dataoke.com/api/category/product/model-detail-by-model-id-new?entityId=3&modelId=11423&proModelId=16&source=3&version=v1')
         .then(res=>{
-            console.log('大家都在领',res.data.data);
+            // console.log('大家都在领',res.data.data);
             // console.log('大家都在领',res.data.data.config.total_quan_over.now_num);
             // console.log('大家都在领',res.data.data.config.total_quan_over.pre_num);
             this.IndexReceive = res.data.data.config.list;
