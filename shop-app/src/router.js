@@ -7,8 +7,11 @@ import FreeShipping from './view/freeShipping/freeShipping.vue'
 import Sort from './view/sort/sort.vue'
 import Collection from './view/collection/collection.vue'
 import Main from './view/main/main.vue'
+// 公用页面
 import PopularList from './view/PopularList/PopularList.vue'
 import IndexHeaderList from './components/IndexHeaderList.vue'
+import IndexHeaderShopInfo from './components/IndexHeaderShopInfo.vue'
+
 let routes = [
     {
         path:'/',redirect:"/index"
@@ -57,6 +60,10 @@ let routes = [
     {
         path:'/popularlist',
         component:PopularList
+    },
+    {
+        path:'/indexheadershopinfo',
+        component:IndexHeaderShopInfo
     }
 ]
 

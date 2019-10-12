@@ -18,7 +18,7 @@
           <van-tab v-for="(s,i) in IndexListData" :title="s.name" :key="i">
               <ul class="IndexListDataUls">
                 <li class="IndexListDataInfoBox" v-for="(m,idx) in IndexListDataInfo" :key="idx">
-                    <a>
+                    <a @click="Jump(m.jump_url,m.name)">
                       <img :src="m.icon">
                       <span>{{m.name}}</span>
                     </a>
@@ -69,6 +69,11 @@ export default {
         }else{
           this.$router.go(-1);
         }
+      },
+      Jump(jump,Name){
+        this.$router.push({path:'/indexheadershopinfo',query:{Url:jump,Title:Name}})
+        console.log(jump);
+        console.log(Name);
       }
     },
     created() {
