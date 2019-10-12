@@ -77,9 +77,10 @@ export default {
         })
     },
     methods:{
+        // 时间倒计时
         countdown () {
             // 目标日期时间戳
-            const end = Date.parse(new Date('2019-10-11 00:00:00'))
+            const end = Date.parse(new Date('2019-10-13 00:00:00'))
             // 当前时间戳
             const now = Date.parse(new Date())
             // 相差的毫秒数

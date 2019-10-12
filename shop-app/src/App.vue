@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="list-tabber">
+    <!-- <div class="list-tabber">
       <router-link to='/index'>
         <p class="iconfont icon-shouye"></p>
         <p>首页</p>
@@ -21,8 +21,16 @@
         <p class="iconfont icon-wode"></p>
         <p>我的</p>
       </router-link>
-    </div>
-    <router-view></router-view>
+    </div> -->
+
+    <transition 
+    enter-active-class="animated fadeIn"
+    leave-active-class="animated fadeOut"
+    mode="out-in"
+    >
+      <router-view></router-view>    
+    </transition>
+    <router-view name='tab'></router-view>
   </div>
 </template>
 

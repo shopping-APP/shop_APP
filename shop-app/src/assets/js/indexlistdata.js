@@ -1,3 +1,4 @@
+//详情头条列表
 var data = {
     "status": 0,
     "data": [
