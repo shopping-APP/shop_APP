@@ -17,10 +17,16 @@
             <p><span>精选</span></p>
             <div class="listbox">
                 <ul class="list">
-                    <li v-for="(l,i) in HeaderList" :key="i">
-                        <router-link to="/indexheaderlist">
+                    <li v-for="(l,i) in IndexList" :key="i">
+                        <!-- 声明式 -->
+                        <router-link :to="{path:'/indexheaderlist',query:{idx:i,title:l.name}}">
                             {{l.name}}
                         </router-link>
+                        
+                        <!-- 点击事件传id到编程式里面接收 -->
+                        <!-- <a @click="commit(l.cid)">
+                            {{l.name}}
+                        </a> -->
                     </li>
                 </ul>
             </div>
@@ -34,20 +40,32 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import IndexList from '@/assets/js/indexlist'
 export default {
     data(){
         return {
-            HeaderList:[],
-            info:'信息'
+            // HeaderList:[],
+            info:'信息',
+            IndexList:[]
         }
     },
     mounted() {
-        axios.get('http://cmsjapi.dataoke.com/api/category/get-category-list')
-        .then(res=>{
-            // console.log('头部列表',res.data.data);
-            this.HeaderList = res.data.data;
-        })
+        // axios.get('http://www.shenduzhekou.com/index.php?r=class/index&type=2')
+        // .then(res=>{
+        // // console.log(res);
+        //     this.HeaderList = res.data.data
+        // })
+    },
+    created(){
+        this.IndexList = IndexList.data
+        console.log(this.IndexList)
+    },
+    methods: {
+        // 编程式
+        // commit(cid){
+        //     this.$router.push({path:'indexheaderlist',query:{cid:cid}})
+        // }
     },
 }
 

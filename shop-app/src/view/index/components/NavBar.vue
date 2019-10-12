@@ -1,7 +1,8 @@
 <template>
   <div class="navbar">
-      <van-nav-bar left-arrow :fixed=true :border=false>
-        <slot slot="left"  name="left"></slot>
+      <van-nav-bar left-arrow :fixed=true :border=false @click-left="onClickLeft">
+        <div><slot slot="left"  name="left"></slot></div>
+        
         <slot slot="title" name="title"></slot>
         <slot slot="right" name="right"></slot>
     </van-nav-bar>
@@ -13,7 +14,10 @@ export default {
   methods: {
     scroll(){
       console.log(1)
-    }
+    },
+    onClickLeft(){
+        this.$router.go(-1);
+      },
   },
 }
 </script>

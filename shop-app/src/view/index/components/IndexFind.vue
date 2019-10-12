@@ -15,7 +15,7 @@
                     </p>
                     <div class="IndexFindTotal">
                         <span>天猫 ￥{{m.yuanjia}}</span>
-                        <span>已售{{m.xiaoliang}}万</span>
+                        <span>已售{{(m.xiaoliang/10000).toFixed(2)}}万</span>
                     </div> 
                 </a>
             </li>
@@ -34,8 +34,8 @@ export default {
     mounted(){
         this.axios.get('http://cmsjapi.dataoke.com/api/category/index/lingquan-live-new?pageId=1&pageSize=10&entityId=3&type=1&version=v1&tuserId=567003')
         .then((res) => {
-            console.log(res.data);
-            console.log(res.data.data.list);
+            // console.log(res.data);
+            // console.log(res.data.data.list);
             this.IndexFind = res.data.data.list
         })
 

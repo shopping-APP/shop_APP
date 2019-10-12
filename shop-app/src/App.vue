@@ -33,7 +33,9 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   name: 'app',
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     swiper,
+    // eslint-disable-next-line vue/no-unused-components
     swiperSlide
   }
 }
@@ -41,7 +43,7 @@ export default {
 
 <style>
 @import url('http://at.alicdn.com/t/font_1395397_2dz70mxs4x9.css'); 
-@import url('http://at.alicdn.com/t/font_1401731_fx33qvbb83n.css');
+@import url('http://at.alicdn.com/t/font_1401731_wgaw4fxxu6.css');
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -49,7 +51,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
 }
 html,body{
   overflow-x: hidden;

@@ -1,5 +1,5 @@
 <template>
-  <div class="free">
+  <div class="free shop">
     <NavBar>
       <img
         slot="title"
@@ -11,7 +11,7 @@
     <UpperPart :gettitle="gettitle"/>
     <!-- tab导航标签 -->
     <div ref='tab'></div>
-    <van-tabs v-model="active" :sticky="isFixed" title-active-color="#FC3F78" title-inactive-color="#333" @scroll='top' @click="skp">
+    <van-tabs v-model="active" sticky title-active-color="#FC3F78" title-inactive-color="#333" @scroll='top' @click="skp">
         <van-tab title="精选"></van-tab>
         <van-tab title="居家百货"></van-tab>
         <van-tab title="美食"></van-tab>
@@ -50,7 +50,6 @@ export default {
   data() {
     return {
       bools:true,
-      isFixed:true,
       gettitle: {},
       active: 0,
       beauty:[], //补水面膜数据
@@ -70,6 +69,7 @@ export default {
   },
   methods: {
     top(a){
+      // console.log(a)
       this.bools=true
     },
     skp(){

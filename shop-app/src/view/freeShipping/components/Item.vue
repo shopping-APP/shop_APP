@@ -15,7 +15,7 @@
       </swiper-slide>
 
       <swiper-slide class="last">
-            <div @click="changexb(xb)">
+          <div @click="changexb(xb)">
           <van-icon name="bag" size="45px" color="#FC7D7D" />
           <p>公35件商品</p>
           <van-icon name="ellipsis" color="red" size="22px" :style="style" />

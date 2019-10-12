@@ -11,9 +11,22 @@ module.exports = {
       //   }
       // }
       proxy: {
-        '/api': {
+        '/ajax': {
           target: 'http://www.shenduzhekou.com/index.php',
-          changeOrigin: true
+          ws: true,
+          changeOrigin: true,
+          pathRewrite:{
+            '^/ajax':''
+          }
         },
+        // '/api': {
+        //   target: 'http://cmsjapi.dataoke.com/api',
+        //   changeOrigin: true,
+        //   ws:true,
+        //   pathRewrite:{
+        //     '^/api':'',
+        //   }
+        // },
+      }
     }
   }

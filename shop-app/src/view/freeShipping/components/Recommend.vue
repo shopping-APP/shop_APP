@@ -11,7 +11,7 @@
          <div class="bottom">
            <h3>{{item.d_title}}</h3>
           <div>
-            <li>天猫价 ¥{{item.yuanjia}}</li>
+            <li class="num1">天猫价 ¥{{item.yuanjia}}</li>
             <li class="num">已售<span>{{item.xiaoliang | simplify}}</span>件</li>
           </div>
           <div>
@@ -117,6 +117,10 @@ ul>li>.bottom>div>li:nth-of-type(2){
 }
 ul>li>.bottom>div>li.num{
   text-align: left;
+  width: 53%;
+}
+ul>li>.bottom>div>li.num1{
+  width: 47%;
 }
 ul>li>.bottom>div>li span{
       color: #FF2B22;
