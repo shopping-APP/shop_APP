@@ -1,6 +1,5 @@
 <template>
   <div class="IndexHeaderList">
-      <!-- <router-view></router-view> -->
       <div class="IndexHeaderTitle">
         <a class="iconfont icon-youjiantou1" @click="history"></a>
         <h1>{{title}}</h1>
@@ -27,7 +26,14 @@
           </van-tab>
         </van-tabs>
       </div>
-      
+      <div class="IndexHeaderTitle2">
+          <van-tabs title-active-color="#FC3F78" title-inactive-color="#333">
+            <van-tab border=false v-for="(s,i) in arr" :key="i" :title="s"></van-tab>
+            <van-tab border=false title="价格">
+              <!-- <i class="iconfont icon-paixu"></i> -->
+            </van-tab>
+          </van-tabs>
+      </div>
   </div>
 </template>
 
@@ -40,7 +46,8 @@ export default {
             title:'',
             IndexListDataInfo:[],
             IndexListData:[],//数据
-            active:0
+            active:0,
+            arr:['人气','最新','销量']
         }
     },
     mounted() {
@@ -53,7 +60,7 @@ export default {
       // 当前页面实际下标
       // console.log(this.cid)
       // 点击列表的显示页面
-      this.IndexListDataInfo = this.IndexListData[this.cid].sub_class
+      this.IndexListDataInfo = this.IndexListData[this.cid-1].sub_class
     },
     methods: {
       history(){
@@ -111,9 +118,7 @@ export default {
 }
 .IndexHeaderList2{
   margin-top:44px;
-  /* position: fixed; */
-  /* top: 44px; */
-  /* left:0; */
+  border-bottom: 7px solid #f5f5f5;
 }
 .van-tabs__content{
   margin-bottom: 10px;
@@ -142,5 +147,16 @@ export default {
   color: #333;
   line-height: 30px;
   display: block;
+}
+.IndexHeaderTitle2{
+  height: 40px;
+  border-bottom: 7px solid  #f5f5f5;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.IndexHeaderTitle2>.van-tabs{
+  width: 100%;
 }
 </style>

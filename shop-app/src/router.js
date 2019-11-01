@@ -11,11 +11,13 @@ import Main from './view/main/main.vue'
 import PopularList from './view/PopularList/PopularList.vue'
 import IndexHeaderList from './components/IndexHeaderList.vue'
 import IndexHeaderShopInfo from './components/IndexHeaderShopInfo.vue'
+import IndexHeaderShopInfoChild from './components/IndexHeaderShopInfoChild.vue'
 
 let routes = [
     {
         path:'/',redirect:"/index"
     },
+    // 首页
     {
         path:'/index',
         components:{
@@ -23,6 +25,7 @@ let routes = [
             default:Index
         }
     },
+    // 9.9包邮
     {
         path:'/freeShipping',
         components:{
@@ -30,6 +33,7 @@ let routes = [
             default:FreeShipping
         }
     },
+    // 分类
     {
         path:'/sort',
         components:{
@@ -37,6 +41,7 @@ let routes = [
             default:Sort
         }
     },
+    // 收藏
     {
         path:'/collection',
         // component:Collection
@@ -45,6 +50,7 @@ let routes = [
             default:Collection
         }
     },
+    // 我的
     {
         path:'/main',
         // component:Main
@@ -53,6 +59,7 @@ let routes = [
             default:Main
         }
     },
+    // 首页头部列表页
     {
         path:'/indexheaderlist',
         component:IndexHeaderList
@@ -61,9 +68,16 @@ let routes = [
         path:'/popularlist',
         component:PopularList
     },
+    // 首页头部列表详情页
     {
         path:'/indexheadershopinfo',
-        component:IndexHeaderShopInfo
+        component:IndexHeaderShopInfo,
+        children:[
+            {
+                path:'/indexheadershopinfo',
+                component:IndexHeaderShopInfoChild
+            }
+        ]
     }
 ]
 

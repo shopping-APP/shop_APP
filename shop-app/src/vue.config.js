@@ -11,12 +11,12 @@ module.exports = {
       //   }
       // }
       proxy: {
-        '/ajax': {
-          target: 'http://www.shenduzhekou.com/index.php',
+        '/api': {
+          target: 'http://www.shenduzhekou.com',
           ws: true,
           changeOrigin: true,
           pathRewrite:{
-            '^/ajax':''
+            '^/api':''
           }
         },
         // '/api': {

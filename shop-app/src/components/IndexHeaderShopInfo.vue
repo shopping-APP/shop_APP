@@ -17,14 +17,8 @@ export default {
     },
     created() {
         // 传过来的路径和名字
-        var url = this.$route.query.jump
         var Title = this.$route.query.Title
         this.Title = Title
-        this.axios.get('http://www.shenduzhekou.com'+url)
-        .then(res=>{
-            console.log(res);
-        })
-
     },
     methods: {
         history(){
